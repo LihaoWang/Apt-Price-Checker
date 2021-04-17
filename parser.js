@@ -13,13 +13,24 @@ const nightmare = require("nightmare")();
 const args = process.argv.slice(2);
 const url = args[0];
 
-/*
-  https://www.avaloncommunities.com/new-york/brooklyn-apartments/avalon-willoughby-square/apartments?bedroom=0BD
-  https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-dobro/apartments?bedroom=0BD
-  https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-fort-greene/apartments?bedroom=0BD
-*/
+const urls = {
+  dobro:
+    "https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-dobro/apartments?bedroom=0BD",
+  will:
+    "https://www.avaloncommunities.com/new-york/brooklyn-apartments/avalon-willoughby-square/apartments?bedroom=0BD",
+  fg:
+    "https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-fort-greene/apartments?bedroom=0BD",
+};
 
-checkPrice();
+if (url == "dobro") {
+  checkPrice(urls["dobro"]);
+}
+if (url == "will") {
+  checkPrice(urls["will"]);
+}
+if (url == "fg") {
+  checkPrice(urls["fg"]);
+}
 
 function update(result) {
   for (let item of result) {
@@ -38,10 +49,10 @@ async function updatedb(item) {
     price: item.price,
   });
 }
-async function checkPrice() {
+async function checkPrice(n) {
   try {
     const result = await nightmare
-      .goto(url)
+      .goto(n)
       .wait(".apartment-cards")
       .evaluate(() => {
         var elements = [];
