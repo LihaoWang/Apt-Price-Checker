@@ -13,11 +13,11 @@ const nightmare = require("nightmare")();
 const args = process.argv.slice(2);
 const url = args[0];
 
-// const urls = [
-//   "https://www.avaloncommunities.com/new-york/brooklyn-apartments/avalon-willoughby-square/apartments?bedroom=0BD",
-//   "https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-dobro/apartments?bedroom=0BD",
-//   "https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-fort-greene/apartments?bedroom=0BD",
-// ];
+/*
+  https://www.avaloncommunities.com/new-york/brooklyn-apartments/avalon-willoughby-square/apartments?bedroom=0BD
+  https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-dobro/apartments?bedroom=0BD
+  https://www.avaloncommunities.com/new-york/brooklyn-apartments/ava-fort-greene/apartments?bedroom=0BD
+*/
 
 checkPrice();
 
