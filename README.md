@@ -2,4 +2,5 @@
 ## Installation
 `npm install`
 ## Usage
-`node parse.js [url]`
+`node parse.js [fg/will/dobro]`  
+fg = Fortgreene, will = Willoughby, dobro = Dobro
